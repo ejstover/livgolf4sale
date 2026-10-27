@@ -7,4 +7,5 @@
 .buddy-window>.lurkers{margin:0 9px 12px}
 .message-toolbar strong,.message-footnote{color:#4b5547}.titlebar.muted{background:linear-gradient(90deg,#3d5b66,#526e66)}
 .buddy-button[aria-pressed=true]:focus-visible{outline-color:#fff}
+.away-paper>p{white-space:pre-line;font-size:23px;line-height:1.45}.buddy-preview{white-space:pre-line}.buddy-button:has(.presence.lurkers){background:#f3f3e6}#share-feedback:not(:empty){padding-top:10px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button:active{transform:none}}

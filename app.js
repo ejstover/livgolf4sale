@@ -4,6 +4,7 @@
   const { players, sources } = window.LIV_DATA;
   const $ = id => document.getElementById(id);
   const groups = [
+    { id: 'lurkers', title: 'Lurkers', subtitle: '' },
     { id: 'online', title: 'Online', subtitle: 'still in the group project' },
     { id: 'idle', title: 'Idle', subtitle: 'it’s complicated' },
     { id: 'offline', title: 'Offline', subtitle: 'has left the chat' }
@@ -26,8 +27,8 @@
     button.setAttribute('aria-label', `${p.name}, ${p.presence === 'lurkers' ? 'Lurkers' : p.presence}. View fictional status`);
     const dot = el('span', `presence ${p.presence === 'lurkers' ? 'online' : p.presence}`); dot.setAttribute('aria-hidden', 'true');
     const copy = el('span', 'buddy-copy'); copy.append(el('span', 'buddy-name', p.name));
-    if (p.presence === 'lurkers') copy.append(el('span', 'attendance', p.message));
-    else { copy.append(el('span', 'buddy-handle', p.screenName)); if (p.presence === 'online') copy.append(el('span', 'buddy-preview', p.message)); }
+    copy.append(el('span', 'buddy-handle', p.screenName));
+    if (p.presence === 'online') copy.append(el('span', 'buddy-preview', p.message));
     button.append(dot, copy); button.addEventListener('click', () => select(p, true)); return button;
   }
   function render() {
@@ -50,17 +51,15 @@
       section.append(heading, list); fragment.append(section);
     }
     $('buddy-groups').replaceChildren(fragment); $('no-results').hidden = results > 0;
-    const lurkers = sorted.filter(p => p.presence === 'lurkers');
-    const heading = el('div', 'lurker-heading'); heading.append(el('span', '', 'LURKERS'), el('span', '', String(lurkers.length)));
-    $('lurkers').replaceChildren(heading, ...lurkers.map(buddyButton));
     const count = presence => players.filter(p => p.presence === presence).length;
-    $('list-total').textContent = `${count('online')} online · ${count('idle')} idle · ${count('offline')} offline`;
+    $('list-total').textContent = `${count('online')} online · ${count('idle')} idle · ${count('offline')} offline · ${count('lurkers')} lurker`;
   }
   function select(p, moveFocus = false) {
     selected = p;
     document.querySelectorAll('[data-player]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.player === p.id)));
     $('to-handle').textContent = p.screenName; $('profile-name').textContent = p.name; $('profile-handle').textContent = p.screenName;
     $('profile-message').textContent = p.message; $('profile-note').textContent = p.note;
+    $('profile-report').hidden = p.presence === 'lurkers';
     $('profile-presence').textContent = p.presence === 'lurkers' ? '● Lurker' : `${p.presence === 'idle' ? '◷' : p.presence === 'offline' ? '○' : '●'} ${p.presence}`;
     $('profile-presence').dataset.presence = p.presence;
     $('message-kind').textContent = p.presence === 'offline' ? 'LAST AWAY MESSAGE' : p.presence === 'lurkers' ? 'BUDDY INFO' : 'AWAY MESSAGE';

@@ -1,98 +1,102 @@
-/* Presence is an editorial classification, never live activity. All messages are fiction. */
+/* All screen names and messages are fictional. Presence is an editorial classification.
+ * usernameOrigin records the personal reference for editors; it is not rendered as a quote.
+ * Messages are original AIM-style verse, not reproduced song lyrics. */
 window.LIV_DATA = (() => {
-  const checked = '2026-10-26';
+  const checked = "2026-10-26";
   const sources = {
-    decisions: { label: 'Golf Channel · Oct 26, 2026', date: '2026-10-26', url: 'https://www.golfchannel.com/news/news/liv-players-not-returning-in-2027' },
-    exits: { label: 'Golf Digest · departure tracker', date: '2026-10-26', url: 'https://www.golfdigest.com/story/players-who-have-left-liv-golf-jon-rahm-bryson-dechambeau-phil-mickelson' },
-    uncertain: { label: 'GolfMagic · Oct 26, 2026', date: '2026-10-26', url: 'https://www.golfmagic.com/tour/liv-golf/liv-golf-20-which-players-are-staying-leaving-or-undecided' },
-    bryson: { label: 'Golf Monthly · Oct 22, 2026', date: '2026-10-22', url: 'https://www.golfmonthly.com/news/bryson-dechambeau-confirms-dp-world-tour-start-but-still-committed-to-liv-golf-2-0' },
-    roster: { label: 'LIV Golf · season roster', date: null, url: 'https://www.livgolf.com/teams' }
-  };
-  const players = [];
-  const add = (name, presence, screenName, message, note, refs) => players.push({
-    id: name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, ''),
-    name, presence, screenName, message, note, sources: refs.map(key => sources[key]), checked
-  });
-  const online = [
-    ['Ben Campbell', 'BenThereStillHere', 'moved u below my cousin on the buddy list. hope the tour card was worth it.'],
-    ['Brendan Steele', 'SteeleMyHeart', 'u said forever. apparently that meant until abu dhabi.'],
-    ['Cameron Tringale', 'TringaleTears', 'matching polos. matching dreams. apparently only i kept both.'],
-    ['Richard Bland', 'xX_BlandButLoyal_Xx', 'cool. guess “team golf” was just my screen name.'],
-    ['Victor Perez', 'xX_VictorNotVictim_Xx', 'please stop calling it a global family if everyone keeps transferring schools.']
+  "decisions": {
+    "label": "Golf Channel · Oct 26, 2026",
+    "date": "2026-10-26",
+    "url": "https://www.golfchannel.com/news/news/liv-players-not-returning-in-2027"
+  },
+  "exits": {
+    "label": "Golf Digest · departure tracker",
+    "date": "2026-10-26",
+    "url": "https://www.golfdigest.com/story/players-who-have-left-liv-golf-jon-rahm-bryson-dechambeau-phil-mickelson"
+  },
+  "uncertain": {
+    "label": "GolfMagic · Oct 26, 2026",
+    "date": "2026-10-26",
+    "url": "https://www.golfmagic.com/tour/liv-golf/liv-golf-20-which-players-are-staying-leaving-or-undecided"
+  },
+  "bryson": {
+    "label": "Golf Monthly · Oct 22, 2026",
+    "date": "2026-10-22",
+    "url": "https://www.golfmonthly.com/news/bryson-dechambeau-confirms-dp-world-tour-start-but-still-committed-to-liv-golf-2-0"
+  },
+  "roster": {
+    "label": "LIV Golf · season roster",
+    "date": null,
+    "url": "https://www.livgolf.com/teams"
+  }
+};
+  const rows = [
+    {"name":"Ben Campbell","presence":"online","screenName":"QueenstownCryClub","message":"~* u were my favorite notification *~\nnow i just stare at the screen until the screensaver understands me.\nqueenstown is cold. ur colder. </3","usernameOrigin":"Queenstown hometown.","note":"Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.","sourceKeys":["decisions"]},
+    {"name":"Brendan Steele","presence":"online","screenName":"IdyllwildChild","message":"~* i grew up in the mountains / but somehow u were the distant one *~\nmade u a mix cd. track 8 is silence because that's all u ever give me. :'(","usernameOrigin":"Raised in Idyllwild, California.","note":"Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.","sourceKeys":["decisions"]},
+    {"name":"Cameron Tringale","presence":"online","screenName":"SadBoyOfGeorgiaTech","message":"i can manage a degree. i can manage a golf ball.\ni cannot manage seeing u online and knowing it isn't for me.\n~* business major. minor in being replaced. *~","usernameOrigin":"Georgia Tech management graduate.","note":"Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.","sourceKeys":["decisions"]},
+    {"name":"Richard Bland","presence":"online","screenName":"FirstWinAt48","message":"~* nOw pLaYiNg: dashboard confessional *~\nu were my whole buddy list.\nnow ur just a grey name i still check at 2:13am.\n(don't IM me. unless it's u.) </3","usernameOrigin":"First European Tour victory at 48, on his 478th start.","note":"Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.","sourceKeys":["decisions"]},
+    {"name":"Victor Perez","presence":"online","screenName":"DundeeFrenchKiss","message":"~* french kiss / scottish rain / american-sized emotional damage *~\nu called it distance. i called it us.\nback when there was an us. </3","usernameOrigin":"French golfer who lived in Dundee.","note":"Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.","sourceKeys":["decisions"]},
+    {"name":"Abraham Ancer","presence":"offline","screenName":"AbrhamPrancer","message":"~* reindeer have seasons. apparently so did we. *~\ndeleted our pictures. kept the folder.\nit's called 'nothing' so don't ask. </3","usernameOrigin":"User-supplied name pun.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Adrian Meronk","presence":"offline","screenName":"MeronkMan","message":"u don't deserve the version of me that waited for ur dial-up to connect.\n~* big man. little green light. enormous feelings. *~\nbbl. becoming mysterious.","usernameOrigin":"User-supplied podcast nickname.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Branden Grace","presence":"offline","screenName":"Mr62","message":"62 on the card. 0 reasons u couldn't text back.\n~* i broke a record / u broke the part that wasn't replaceable *~\nplease do not ask about my playlist.","usernameOrigin":"First 62 in a men's major, at the 2017 Open.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Brooks Koepka","presence":"offline","screenName":"BlakeOfTheYear","message":"~* u only wanted me when i was winning *~\nnow i'm in my room. hat backwards. pretending the acoustic version doesn't hit harder.\nwhatever. blake wouldn't care. </3","usernameOrigin":"Pardon My Take's Brooks/Blake of the Year running joke.","note":"Left LIV by mutual agreement in December 2025.","sourceKeys":["exits"]},
+    {"name":"Charles Howell III","presence":"offline","screenName":"Chucky3Sticks","message":"three sticks. two headphones. one boy staring out a rain-covered window.\n~* all this equipment / still no way to fix us *~\naway until somebody means forever.","usernameOrigin":"User-supplied Chucky Three Sticks nickname.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"David Puig","presence":"offline","screenName":"SunDevilInMyDMs","message":"~* u can take the boy out of tempe / but not the hurt out of his hotmail *~\nmy mom says there are other friends.\nshe doesn't understand what our matching icons meant. </3","usernameOrigin":"Arizona State Sun Devil; completed his degree online.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Graeme McDowell","presence":"offline","screenName":"GMAC","message":"~* burnt u a cd. u burnt a bridge. *~\nwe are not the same.\ntrack 11 still skips in exactly the place i think about u.","usernameOrigin":"User-supplied established nickname.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Ian Poulter","presence":"offline","screenName":"RyderCupMainCharacter","message":"~* we had matching outfits and a future *~\nnow all i have is medinah on dvd and the shirt u said looked good on me.\ndon't IM. watching it again. :'(","usernameOrigin":"Ryder Cup identity and 2012 Medinah performance.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Jon Rahm","presence":"offline","screenName":"Rahmbo","message":"~* strong enough to carry everyone / not enough to make u stay *~\nchanged my icon to black.\nif u have to ask why, u never really knew me.","usernameOrigin":"User-supplied established nickname.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Louis Oosthuizen","presence":"offline","screenName":"RhinoJiveAfterDark","message":"~* i learned the dance / u forgot the steps *~\npracticed the rhino jive alone in my room.\nmy mom knocked. i said it was just homework. </3","usernameOrigin":"User-supplied Rhino Jive reference; documented Southern Guards dance.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Lucas Herbert","presence":"offline","screenName":"ShoeyOnTheBarbie","message":"~* u were my mate / now ur just a date on a shoebox *~\none shoey for the memories. one for the pain.\nno worries is a lie i tell people who don't know me.","usernameOrigin":"User-requested Australian cliché; fictional, not a claim about his conduct.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Patrick Reed","presence":"offline","screenName":"CaptainAmericaPReed","message":"~* i can save america / but apparently i can't save us *~\nnot naming names.\nbut if ur reading this from a second account... u know who u are. </3","usernameOrigin":"User-supplied Captain America / PReed references.","note":"Chose not to renew his LIV contract in January 2026.","sourceKeys":["exits"]},
+    {"name":"Sergio Garcia","presence":"offline","screenName":"HookEmBunkers","message":"~* orange on the outside / the entire color wheel of pain inside *~\nthis sand used to mean something to me.\ndon't talk to me. don't look at me. don't hand me a rake.","usernameOrigin":"User-supplied Texas fandom and bunker-rage references.","note":"Reached a termination agreement; listed among departures by Golf Channel on October 26.","sourceKeys":["decisions"]},
+    {"name":"Thomas Pieters","presence":"offline","screenName":"FightingIlliniFeelings","message":"~* fighting illini / losing every argument with my own heart *~\nwrote ur name on my glove.\nit smudged. symbolism, i guess. </3","usernameOrigin":"University of Illinois golfer.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Tom McKibbin","presence":"offline","screenName":"HolywoodSequel","message":"~* same hometown / different ending *~\nu kept calling me the next someone.\nmaybe for once i wanted to be ur first choice. :'(","usernameOrigin":"Holywood Golf Club background and Rory comparisons.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Tyrrell Hatton","presence":"offline","screenName":"LordTyrrell","message":"~* a kingdom of feelings / a throne of unread messages *~\ni'm not yelling.\nthis is just what my heart sounds like when nobody listens. </3","usernameOrigin":"User-supplied Lord Tyrrell nickname.","note":"Reported as a departure from the proposed LIV 2.0 league.","sourceKeys":["decisions"]},
+    {"name":"Anirban Lahiri","presence":"idle","screenName":"BaanWithTheWind","message":"~* u said take ur best shot / so i aimed straight at forever *~\nmissed.\naway. listening to the same intro until it feels like an apology.","usernameOrigin":"Baan nickname, used in the name of his foundation; film-title pun.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Anthony Kim","presence":"idle","screenName":"BeltBuckle2008","message":"~* the buckle still shines / the memories do not *~\nfound an old photo where everyone still liked everyone.\nmade it my desktop. made it worse.","usernameOrigin":"His conspicuous AK belt buckle and 2008 breakout era.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Björn Hellgren","presence":"idle","screenName":"SwedishSeminole","message":"~* crossed an ocean / still couldn't cross ur mind *~\nthere is no swedish word for the way u didn't pick me.\nprobably. i haven't checked. </3","usernameOrigin":"Swedish golfer and Florida State alumnus.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Bryson DeChambeau","presence":"idle","screenName":"Par67AndSingle","message":"~* i calculated the launch angle of every feeling *~\nstill couldn't work out why u left.\n17 takes. 0 replies.\nnew video when i'm done being misunderstood.","usernameOrigin":"His Augusta par-67 remark and public video-making persona.","note":"Reportedly working to support the restart, but a definitive public playing commitment was not verified. Kept Idle under this site’s conservative classification.","sourceKeys":["bryson","decisions"]},
+    {"name":"Bubba Watson","presence":"idle","screenName":"PinkDriverBlueFeelings","message":"~* pink driver / blue heart / invisible friend request *~\nu said i was too emotional.\nso i cried in a different font. happy now? :'(","usernameOrigin":"Signature pink driver and emotional public persona.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Byeong Hun An","presence":"idle","screenName":"PingPongPedigree","message":"~* back and forth / back and forth / then nothing *~\neven my parents know how to return something.\nplease stop calling silence a conversation.","usernameOrigin":"Both parents were Olympic table-tennis medalists.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Caleb Surratt","presence":"idle","screenName":"VolForYourAffection","message":"~* volunteered for the group project / got assigned the heartbreak *~\ni saved u a seat at lunch.\nnow it's where i put my backpack so nobody asks. </3","usernameOrigin":"University of Tennessee Volunteers golf background.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Cameron Smith","presence":"idle","screenName":"MulletMyFeelings","message":"~* business in the front / emotional devastation in the back *~\ncut everyone off except the hair.\nit's the only thing that stayed.","usernameOrigin":"His mullet haircut.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Carlos Ortiz","presence":"idle","screenName":"MeanGreenHeartbreak","message":"~* mean green / soft heart / worst combination *~\nu borrowed my hoodie and my entire personality.\ni only asked for the hoodie back because i have dignity.","usernameOrigin":"North Texas Mean Green alumnus.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Charl Schwartzel","presence":"idle","screenName":"FourBirdiesNoClosure","message":"~* four birdies to finish / still can't finish this goodbye *~\nclosure is apparently something other people get.\ni got a compilation cd and a headache. </3","usernameOrigin":"Four closing birdies to win the 2011 Masters.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Danny Lee","presence":"idle","screenName":"KiwiAmateur08","message":"~* once somebody called me the future *~\nnow i just call u and let it ring.\nthe answering machine knows the best version of me.","usernameOrigin":"New Zealand golfer; 2008 US Amateur champion.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Dean Burmester","presence":"idle","screenName":"BurmesterAndCoke","message":"~* mixed the drinks / mixed the signals / kept the receipt *~\nthis isn't about u.\nunless u think it is.\nthen it absolutely is. </3","usernameOrigin":"Surname and brandy-and-Coke wordplay; fictional drink persona.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Do-Yeob Mun","presence":"idle","screenName":"MunlightSonata","message":"~* the moon saw everything / and still won't tell me why *~\nset my status to away. sat right here.\nwaiting is different when u pretend it's a choice.","usernameOrigin":"Mun/moon surname wordplay and a music reference.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Dustin Johnson","presence":"idle","screenName":"WhistlingBunkerRules","message":"~* thought it was solid ground / turns out it was another bunker *~\ni don't understand the rules of us.\nplease stop making me the last one to know.","usernameOrigin":"The grounded-club bunker penalty at Whistling Straits in 2010.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Elvis Smylie","presence":"idle","screenName":"SmylieFaceSadEyes","message":"~* smylie face / sad eyes / profile set to private *~\nthey keep saying i look fine.\nthat's literally just my last name.","usernameOrigin":"Wordplay on his surname.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["roster","exits"]},
+    {"name":"Harold Varner III","presence":"idle","screenName":"HV3AndMe","message":"~* three little letters / one entire personality u didn't appreciate *~\nmade our initials my password.\nnow every login feels personal. </3","usernameOrigin":"His HV3 nickname and initials.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Jason Kokrak","presence":"idle","screenName":"XavierAfterHours","message":"~* all for one / except apparently the one was me *~\nstill got the team photo.\nfolded everyone else behind the frame.","usernameOrigin":"Xavier Musketeers college career; all-for-one musketeer reference.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Joaquin Niemann","presence":"idle","screenName":"59ShadesOfNiemann","message":"~* went sub-60 / still somehow below ur expectations *~\nu said there was nobody else.\nfunny how quickly u found a whole group of them.","usernameOrigin":"His 59 at Mayakoba in 2024.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Josele Ballester","presence":"idle","screenName":"RaesCreekRelief","message":"~* made a scene / made a mistake / made it everybody's problem *~\nwhy does every memory of us end with me apologizing.\naway. finding a more private place to have feelings.","usernameOrigin":"His publicly acknowledged Rae's Creek bathroom incident at the 2025 Masters.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Laurie Canter","presence":"idle","screenName":"BathTimeCanter","message":"~* running the bath / replaying the conversation / forgetting the water *~\nthe steam wrote ur name on the mirror.\nok i wrote it. are u happy now. </3","usernameOrigin":"Bath birthplace and surname wordplay.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Lee Westwood","presence":"idle","screenName":"WestwoodSince93","message":"~* been doing this since before u had an email address *~\nstill somehow the one waiting for a reply.\nage is just a number. so is 37 unread messages.","usernameOrigin":"Turned professional in 1993.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Luis Masaveu","presence":"idle","screenName":"TroonAmateurHour","message":"~* made the cut / didn't make ur weekend plans *~\nputting 'busy' in my status so nobody knows i'm just here.\nwith the same song. again. </3","usernameOrigin":"First Spanish amateur to make The Open cut, at Troon in 2024.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Marc Leishman","presence":"idle","screenName":"LeishmanLagerTears","message":"~* cold lager / warm memories / terrible aftertaste *~\nkept the bottle caps from the good times.\nmy friends say that's weird. my friends don't get it.","usernameOrigin":"His Leishman Lager beer.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Martin Kaymer","presence":"idle","screenName":"KaymerChameleon","message":"~* changed my colors / u changed ur mind *~\nlearning to disappear into whatever room u aren't in.\naway. it's called healing. probably.","usernameOrigin":"Surname pun on Culture Club's song title.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Matthew Wolff","presence":"idle","screenName":"xX_WolffBackswing_Xx","message":"~* u said u liked that i was different *~\nthen asked me to change.\nthe swing stayed.\nthe trust did not. </3","usernameOrigin":"His distinctive backswing.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Michael La Sasso","presence":"idle","screenName":"HottyToddyHeartbreak","message":"~* national champion / local disappointment *~\nput ur name next to my trophy.\nnow one of them is facing the wall.","usernameOrigin":"Ole Miss alumnus and 2025 NCAA individual champion.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Miguel Tabuena","presence":"idle","screenName":"ManilaMixtape","message":"~* side a: us / side b: everything u never said *~\nrewound the tape with a pencil.\nwish the rest of it worked like that. :'(","usernameOrigin":"Manila birthplace.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Minkyu Kim","presence":"idle","screenName":"CzechMateAt17","message":"~* seventeen and winning / older and still not understanding *~\nsome people call it growth.\ni call it changing my password to stop checking ur profile.","usernameOrigin":"Won the Czech Challenge at 17.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Paul Casey","presence":"idle","screenName":"CaseyTheSunDevil","message":"~* sun devil / rain cloud / same boy underneath *~\nu said we'd burn bright forever.\ni kept the ashes in a folder called 'do not open'.\nopened it. </3","usernameOrigin":"Arizona State college career.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Peter Uihlein","presence":"idle","screenName":"TitleistFamilyPlan","message":"~* grew up with every ball / still dropped the one that mattered *~\nmoney can't buy ur friendship.\ntrust me. the spreadsheet is humiliating.","usernameOrigin":"Son of former Acushnet/Titleist CEO Wally Uihlein; fictional family-plan joke.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Phil Mickelson","presence":"idle","screenName":"CoffeeForWellnessDad","message":"~* coffee for wellness / eyeliner for the damage *~\neveryone says work on yourself.\ni have a whole brand about it.\nwhy isn't it working. </3","usernameOrigin":"His Coffee For Wellness brand.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["roster","exits"]},
+    {"name":"Richard T. Lee","presence":"idle","screenName":"OakmontAt16","message":"~* sixteen at oakmont / still a kid when u stop replying *~\nthought growing up meant the goodbyes got easier.\nturns out u just get better at saying 'all good'.","usernameOrigin":"Qualified for the 2007 US Open at 16.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Sam Horsfield","presence":"idle","screenName":"PoultersHorcrux","message":"~* u put a piece of ur soul in my game *~\nthen acted surprised when i got dramatic.\ni learned from watching u.\nyes this away message is about u. </3","usernameOrigin":"Ian Poulter was a mentor; fictional Harry Potter metaphor.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Scott Vincent","presence":"idle","screenName":"HarareHokie","message":"~* long way from harare / longer way from being over it *~\nkept my phone on loud across three time zones.\nu still somehow missed all of them.","usernameOrigin":"Harare-born Virginia Tech Hokie.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Sebastian Muñoz","presence":"idle","screenName":"BogotaMeanGreen","message":"~* hometown heart / mean green memories *~\nwe said we'd never be strangers.\nnow ur birthday is just a security question i refuse to change.","usernameOrigin":"Bogotá birthplace and North Texas college career.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Talor Gooch","presence":"idle","screenName":"AsteriskBoy","message":"~* ur forever came with an asterisk *~\ni read the fine print.\nit just said 'unless i find better friends'.\nhope the acoustic version hurts u too. </3","usernameOrigin":"His public asterisk remark about a potential Rory Masters win.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Thomas Detry","presence":"idle","screenName":"DetryTheOtherBelgian","message":"~* the other belgian / the second choice / the backup plan *~\nnot asking to be ur whole world.\njust thought i'd be in the top eight.","usernameOrigin":"Belgian golfer; joke about sharing the billing with Pieters.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Younghan Song","presence":"idle","screenName":"SongForTheDumped","message":"~* wrote u a song / u asked if it came in a shorter version *~\nit doesn't.\nneither does the away message.\nget comfortable. </3","usernameOrigin":"Wordplay on his surname and a breakup-song title.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Yosuke Asaji","presence":"idle","screenName":"TokyoMixtape","message":"~* city full of lights / still staring at ur one grey dot *~\nthere are millions of people here.\nannoying that i only want a reply from the wrong ones.","usernameOrigin":"Tokyo birthplace.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
+    {"name":"Patrick Cantlay","presence":"lurkers","screenName":"PattyIceCapital","message":"~* u see a breakup / i see an entry point *~\nur rock bottom is my buy signal.\n</3 deeply distressed. deeply interested.","usernameOrigin":"User-directed private-equity satire, combined with the Patty Ice nickname; not a claim about actual investments.","note":"Fictional account included for satire. Not a LIV roster entry.","sourceKeys":[]}
   ];
-  online.forEach(([name, handle, message]) => add(name, 'online', handle, message, 'Publicly expressed an intention to stay for LIV 2.0. This is not confirmation of a signed contract.', ['decisions']));
-  const offline = [
-    ['Abraham Ancer', 'AncerMeNever', 'new tour. who dis.'],
-    ['Adrian Meronk', 'AdrianHasLeftTheChat', 'this away message is now on european time.'],
-    ['Branden Grace', 'GracePeriodExpired', 'the matching shirts were getting a little intense.'],
-    ['Brooks Koepka', 'KoepkaSeeYa', 'removed myself from the distribution list before it was cool.'],
-    ['Charles Howell III', 'CH3ckedOut', 'three initials. zero unread team announcements.'],
-    ['David Puig', 'PuigUnplugged', 'please forward my mail. not the team polos.'],
-    ['Graeme McDowell', 'GMacLoggedOut', 'new chapter. same inability to unsubscribe from emails.'],
-    ['Ian Poulter', 'PoultergeistOffline', 'the wardrobe has entered the transfer portal.'],
-    ['Jon Rahm', 'RahmServiceUnavailable', 'this screen name is no longer accepting team-building exercises.'],
-    ['Louis Oosthuizen', 'OostOutOfOffice', 'left the group. still somehow getting the calendar invites.'],
-    ['Lucas Herbert', 'HerbertHasDisconnected', 'i thought “ripper” was a phase.'],
-    ['Patrick Reed', 'ReedReceiptOff', 'read receipts: off. membership enquiry: sent.'],
-    ['Sergio Garcia', 'SergioSignedOff', 'please remove me from the next vision deck.'],
-    ['Thomas Pieters', 'PietersOut', 'uninstalled. the polo is still in the laundry.'],
-    ['Tom McKibbin', 'McKibbinBRB', 'brb means something different when u pack all ur stuff.'],
-    ['Tyrrell Hatton', 'HattonHadEnough', 'muted the chat. then remembered i could just leave.']
-  ];
-  offline.forEach(([name, handle, message]) => add(name, 'offline', handle, message,
-    name === 'Brooks Koepka' ? 'Left LIV by mutual agreement in December 2025.' :
-    name === 'Patrick Reed' ? 'Chose not to renew his LIV contract in January 2026.' :
-    name === 'Sergio Garcia' ? 'Reached a termination agreement; listed among departures by Golf Channel on October 26.' :
-    'Reported as a departure from the proposed LIV 2.0 league.',
-    ['Brooks Koepka', 'Patrick Reed'].includes(name) ? ['exits'] : ['decisions']));
-
-  // Current official team members and listed wildcards; prior departures above are retained.
-  const idle = [
-    ['Anirban Lahiri', 'LahiriLoading', 'still here. emotionally buffering.'],
-    ['Anthony Kim', 'AKBackAgain', 'came back and everyone was packing. sick.'],
-    ['Björn Hellgren', 'HellgrenOnHold', 'the group project has become an individual assignment.'],
-    ['Bryson DeChambeau', 'xX_BrysonOfflineIsALie_Xx', 'filming a response to ur response to my response. please respect the process.'],
-    ['Bubba Watson', 'BubbaBRB', 'putting the phone down. picking it up. putting it down.'],
-    ['Byeong Hun An', 'AnUnreadMessage', 'just joined and the group chat is already on fire.'],
-    ['Caleb Surratt', 'SurrattStillLoading', 'does anyone know who the group admin is now.'],
-    ['Cameron Smith', 'CamUStillThere', 'typing… deleting… going fishing.'],
-    ['Carlos Ortiz', 'OrtizOnHold', 'the group chat says 12 members but only 2 are typing.'],
-    ['Charl Schwartzel', 'SchwartzelStatusUnknown', 'the welcome packet said nothing about this part.'],
-    ['Danny Lee', 'DannyLeaveMeOnRead', 'refreshing the buddy list counts as practice right.'],
-    ['Dean Burmester', 'DeanOfUnreadMessages', 'a little less global family. a little more reply all.'],
-    ['Do-Yeob Mun', 'MunMoodLoading', 'can someone pin the actual plan.'],
-    ['Dustin Johnson', 'DJDoNotDisturb', 'the phone is on silent. the situation is not.'],
-    ['Elvis Smylie', 'SmylieThruIt', 'new school. weird assembly.'],
-    ['Harold Varner III', 'HV3Dots', 'three dots. no announcement.'],
-    ['Jason Kokrak', 'KokrakConnectionPending', 'is the wifi bad or is everyone avoiding this.'],
-    ['Joaquin Niemann', 'NiemannNeedsSpace', 'please stop reading into my playlist.'],
-    ['Josele Ballester', 'BallesterBRB', 'this was not covered at orientation.'],
-    ['Laurie Canter', 'CanterUAnswer', 'back again. why are the chairs in a circle.'],
-    ['Lee Westwood', 'WestwoodWhatever', 'too old for this drama. still checking the chat though.'],
-    ['Luis Masaveu', 'MasaveuMaybe', 'trying to find the part of the group project with my name on it.'],
-    ['Marc Leishman', 'LeishMeOnRead', 'gone to get a snack. do not announce anything while im gone.'],
-    ['Martin Kaymer', 'KaymerConnectionLost', 'please send the plan as a pdf this time.'],
-    ['Matthew Wolff', 'WolffInTheGroupChat', 'the pack has enabled disappearing messages.'],
-    ['Michael La Sasso', 'LaSassoLastSeen', 'orientation was literally five minutes ago.'],
-    ['Miguel Tabuena', 'TabuenaToBeContinued', 'the group chat has become a holding pattern.'],
-    ['Minkyu Kim', 'KimCurrentlyBuffering', 'the loading screen has a loading screen.'],
-    ['Paul Casey', 'CaseyByCasey', 'this could have been an email. apparently it is 47 emails.'],
-    ['Peter Uihlein', 'UihleinUnread', 'if the plan changes again just update the away message.'],
-    ['Phil Mickelson', 'LeftyOnIdle', 'please leave a message after the increasingly long pause.'],
-    ['Richard T. Lee', 'RichardTBD', 'the t stands for to be determined now.'],
-    ['Sam Horsfield', 'HorsfieldHoldMusic', 'i have memorized the hold music.'],
-    ['Scott Vincent', 'VincentViewing', 'seen the message. processing the attachment.'],
-    ['Sebastian Muñoz', 'MunozMaybeLater', 'the group chat notification has become my resting heart rate.'],
-    ['Talor Gooch', 'GoochStatusPending', 'please no more new eras until after lunch.'],
-    ['Thomas Detry', 'DetryAgainLater', 'checking my options. and my phone. mostly my phone.'],
-    ['Younghan Song', 'SongStillBuffering', 'track 1: hold music. track 2: also hold music.'],
-    ['Yosuke Asaji', 'AsajiAwayForNow', 'not ignoring u. the entire league is buffering.']
-  ];
-  idle.forEach(([name, handle, message]) => add(name, 'idle', handle, message,
-    name === 'Bryson DeChambeau' ? 'Reportedly working to support the restart, but a definitive public playing commitment was not verified. Kept Idle under this site’s conservative classification.' :
-    'No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.',
-    name === 'Bryson DeChambeau' ? ['bryson', 'decisions'] :
-    ['Elvis Smylie', 'Phil Mickelson'].includes(name) ? ['roster', 'exits'] : ['uncertain', 'roster']));
-  add('Patrick Cantlay', 'lurkers', 'Patrick Cantlay', 'Attendance unverified.', 'A permanent site joke. Not a LIV roster entry.', []);
+  const players = rows.map(({ sourceKeys, ...p }) => ({
+    ...p, checked,
+    id: p.name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, ''),
+    sources: sourceKeys.map(key => sources[key])
+  }));
   return { checked, sources, players };
 })();
