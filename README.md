@@ -29,3 +29,9 @@ All 61 players have a personal screen-name reference recorded in `players.js` as
 
 Cantlay appears once inside the ordinary collapsible Lurkers group as PattyIceCapital, with a static green dot. The former attendance line and separate lurker panel are removed. His fictional message carries the distressed-assets joke without explanatory reporting text. Sharing remains in the menu; the promotional forwarding window is removed.
 
+
+## Movable windows
+
+On desktop, drag either blue title bar to move its window. Clicking a window brings it to the front. Focus a title bar and use arrow keys to move it, Shift+arrows for larger steps, or Home to reset it. Arrange resets both windows. Movement stays inside the desktop and clear of the footer. Positions reset on refresh or when switching to the stacked mobile layout. The page banner is removed; the single satire notice remains at the bottom.
+
+`windows.js` implements pointer capture, keyboard movement, boundary clamping, resize handling and reset controls without dependencies or stored visitor data.

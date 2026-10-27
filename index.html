@@ -4,16 +4,17 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#07494f">
 <meta name="description" content="LIV Instant Messenger. The future of golf is currently typing… Golf lore, buddy lists, and deeply unnecessary away messages.">
 <meta property="og:title" content="LIV Instant Messenger"><meta property="og:description" content="u were my whole buddy list. Golf lore and deeply unnecessary away messages.">
-<title>LIV Instant Messenger — livgolf4sale.com</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><script src="players.js" defer></script><script src="app.js" defer></script>
+<title>LIV Instant Messenger — livgolf4sale.com</title><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><script src="players.js" defer></script><script src="app.js" defer></script><script src="windows.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#workspace">Skip to messenger</a>
 <div class="desktop">
-<header class="site-header"><div class="brand"><img class="brand-icon" src="favicon.svg" width="64" height="64" alt=""><div><p class="eyebrow">livgolf4sale.com</p><h1>LIV Instant Messenger<span class="version">2.0?</span></h1><p class="tagline">the future of golf is currently typing…</p></div></div><div class="edition"><span class="connection-icon" aria-hidden="true">▂▄▆</span> STILL CONNECTING<br><span>golf, but lonelier.</span></div></header>
 <main id="workspace" class="workspace">
+<h1 class="sr-only">LIV Instant Messenger</h1>
+<p id="window-move-help" class="sr-only">Drag a title bar to move its window. You can also focus a title bar and use arrow keys; hold Shift for larger steps. Home resets that window, and Arrange restores both windows.</p>
 <section class="window buddy-window" aria-labelledby="buddy-title">
-<div class="titlebar"><h2 id="buddy-title"><img src="favicon.svg" alt="" width="18" height="18"> Buddy List</h2><span class="window-decoration" aria-hidden="true">▁ ▢</span></div>
-<nav class="menubar" aria-label="Messenger"><a href="#about"><u>A</u>bout</a><button id="focus-search" type="button"><u>F</u>ind buddy</button><button class="share-trigger" type="button"><u>S</u>hare</button><button id="copy-link" type="button">Copy link</button></nav>
+<div class="titlebar" data-window-handle tabindex="0" role="group" aria-label="Move Buddy List window" aria-describedby="window-move-help"><h2 id="buddy-title"><img src="favicon.svg" alt="" width="18" height="18"> Buddy List</h2><span class="window-decoration" aria-hidden="true">▁ ▢</span></div>
+<nav class="menubar" aria-label="Messenger"><a href="#about"><u>A</u>bout</a><button id="focus-search" type="button"><u>F</u>ind buddy</button><button class="share-trigger" type="button"><u>S</u>hare</button><button id="copy-link" type="button">Copy link</button><button id="reset-windows" type="button" title="Restore window positions">Arrange</button></nav>
 <p id="share-feedback" role="status" aria-live="polite"></p><div id="manual-copy" hidden><label for="share-url">Copy this link:</label><input id="share-url" type="text" readonly value="https://livgolf4sale.com/"></div>
 <div class="account"><span class="account-icon" aria-hidden="true">✳</span><div><strong>GolfButLouder_2</strong><span>available for a second chance</span></div><span class="presence online" aria-hidden="true"></span></div>
 <div class="search-wrap"><label for="buddy-search">Find a buddy</label><input id="buddy-search" type="search" placeholder="name or regrettable screen name" autocomplete="off" spellcheck="false"></div>
@@ -22,7 +23,7 @@
 </section>
 <div class="right-column">
 <section class="window message-window" aria-labelledby="message-title">
-<div class="titlebar"><h2 id="message-title"><span aria-hidden="true">▤</span> Buddy Info / Away Message</h2><span class="window-decoration" aria-hidden="true">▁ ▢</span></div>
+<div class="titlebar" data-window-handle tabindex="0" role="group" aria-label="Move Buddy Info window" aria-describedby="window-move-help"><h2 id="message-title"><span aria-hidden="true">▤</span> Buddy Info / Away Message</h2><span class="window-decoration" aria-hidden="true">▁ ▢</span></div>
 <div class="message-toolbar"><span><strong>To:</strong> <span id="to-handle">FirstWinAt48</span></span></div>
 <div class="profile" aria-live="polite" aria-atomic="true">
 <div class="profile-heading"><div class="buddy-avatar" aria-hidden="true"><img src="favicon.svg" width="60" height="60" alt=""></div><div class="profile-identity"><p id="profile-presence" class="profile-presence">● Online</p><h3 id="profile-name">Richard Bland</h3><p id="profile-handle">FirstWinAt48</p></div></div>

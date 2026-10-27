@@ -8,5 +8,8 @@
 .message-toolbar strong,.message-footnote{color:#4b5547}.titlebar.muted{background:linear-gradient(90deg,#3d5b66,#526e66)}
 .buddy-button[aria-pressed=true]:focus-visible{outline-color:#fff}
 .report{margin-top:22px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.menubar{flex-wrap:wrap}.window{position:relative}.titlebar:focus-visible{outline:2px solid #fff;outline-offset:-4px}
+@media(min-width:721px){.workspace{position:relative;padding-bottom:180px;isolation:isolate}.right-column{display:contents}.titlebar[data-window-handle]{cursor:grab;touch-action:none;user-select:none}.is-dragging .titlebar{cursor:grabbing}.site-footer{position:relative}.desktop{padding-top:32px}}
+@media(max-width:720px){#reset-windows{display:none}.desktop{padding-top:16px}}
 .away-paper>p{white-space:pre-line;font-size:23px;line-height:1.45}.buddy-preview{white-space:pre-line}.buddy-button:has(.presence.lurkers){background:#f3f3e6}#share-feedback:not(:empty){padding-top:10px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button:active{transform:none}}
