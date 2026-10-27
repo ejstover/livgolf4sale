@@ -24,7 +24,7 @@
   function buddyButton(p) {
     const button = el('button', 'buddy-button'); button.type = 'button'; button.dataset.player = p.id;
     button.setAttribute('aria-pressed', String(p.id === selected.id));
-    button.setAttribute('aria-label', `${p.name}, ${p.presence === 'lurkers' ? 'Lurkers' : p.presence}. View fictional status`);
+    button.setAttribute('aria-label', `${p.name}, ${p.presence === 'lurkers' ? 'Lurkers' : p.presence}. View status`);
     const dot = el('span', `presence ${p.presence === 'lurkers' ? 'online' : p.presence}`); dot.setAttribute('aria-hidden', 'true');
     const copy = el('span', 'buddy-copy'); copy.append(el('span', 'buddy-name', p.name));
     copy.append(el('span', 'buddy-handle', p.screenName));

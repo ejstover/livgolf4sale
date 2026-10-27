@@ -91,7 +91,7 @@ window.LIV_DATA = (() => {
     {"name":"Thomas Detry","presence":"idle","screenName":"DetryTheOtherBelgian","message":"~* the other belgian / the second choice / the backup plan *~\nnot asking to be ur whole world.\njust thought i'd be in the top eight.","usernameOrigin":"Belgian golfer; joke about sharing the billing with Pieters.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
     {"name":"Younghan Song","presence":"idle","screenName":"SongForTheDumped","message":"~* wrote u a song / u asked if it came in a shorter version *~\nit doesn't.\nneither does the away message.\nget comfortable. </3","usernameOrigin":"Wordplay on his surname and a breakup-song title.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
     {"name":"Yosuke Asaji","presence":"idle","screenName":"TokyoMixtape","message":"~* city full of lights / still staring at ur one grey dot *~\nthere are millions of people here.\nannoying that i only want a reply from the wrong ones.","usernameOrigin":"Tokyo birthplace.","note":"No definitive public LIV 2.0 decision verified in the reporting reviewed. Idle means unconfirmed here, not proof that the player is undecided.","sourceKeys":["uncertain","roster"]},
-    {"name":"Patrick Cantlay","presence":"lurkers","screenName":"PattyIceCapital","message":"~* u see a breakup / i see an entry point *~\nur rock bottom is my buy signal.\n</3 deeply distressed. deeply interested.","usernameOrigin":"User-directed private-equity satire, combined with the Patty Ice nickname; not a claim about actual investments.","note":"Fictional account included for satire. Not a LIV roster entry.","sourceKeys":[]}
+    {"name":"Patrick Cantlay","presence":"lurkers","screenName":"PattyIceCapital","message":"~* u see a breakup / i see an entry point *~\nur rock bottom is my buy signal.\n</3 deeply distressed. deeply interested.","usernameOrigin":"User-directed private-equity satire, combined with the Patty Ice nickname; not a claim about actual investments.","note":"Lurker.","sourceKeys":[]}
   ];
   const players = rows.map(({ sourceKeys, ...p }) => ({
     ...p, checked,
@@ -100,3 +100,4 @@ window.LIV_DATA = (() => {
   }));
   return { checked, sources, players };
 })();
+
