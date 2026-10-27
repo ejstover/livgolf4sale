@@ -59,6 +59,11 @@
     document.querySelectorAll('[data-player]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.player === p.id)));
     $('to-handle').textContent = p.screenName; $('profile-name').textContent = p.name; $('profile-handle').textContent = p.screenName;
     $('profile-message').textContent = p.message; $('profile-note').textContent = p.note;
+    const awayLinks = p.awayLinks || [];
+    $('profile-links').replaceChildren(...awayLinks.map(({ url, label }) => {
+      const link = el('a', '', label); link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer'; return link;
+    }));
+    $('profile-links').hidden = awayLinks.length === 0;
     $('profile-report').hidden = p.presence === 'lurkers';
     $('profile-presence').textContent = p.presence === 'lurkers' ? '● Lurker' : `${p.presence === 'idle' ? '◷' : p.presence === 'offline' ? '○' : '●'} ${p.presence}`;
     $('profile-presence').dataset.presence = p.presence;
